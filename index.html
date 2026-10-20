@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Company Registration - English Coding Workshop</title>
+<style>
+  :root { --azul:#1f4e79; --claro:#eaf2fb; --verde:#2e7d32; --rojo:#c62828; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; background: var(--claro); margin:0; padding:24px; color:#222; }
+  .card { max-width: 620px; margin: 0 auto; background:#fff; border-radius:12px; padding:28px; box-shadow:0 4px 16px rgba(0,0,0,.1); }
+  h1 { margin:0 0 4px; color:var(--azul); font-size:1.5rem; }
+  p.sub { margin:0 0 20px; color:#555; }
+  label { display:block; margin:14px 0 4px; font-weight:600; font-size:.9rem; }
+  input, select { width:100%; padding:10px 12px; border:1px solid #bbb; border-radius:8px; font-size:1rem; }
+  input:focus, select:focus { outline:2px solid var(--azul); border-color:var(--azul); }
+  .fila { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:520px){ .fila{ grid-template-columns:1fr; } }
+  button { margin-top:22px; width:100%; padding:12px; background:var(--azul); color:#fff; border:none; border-radius:8px; font-size:1.05rem; cursor:pointer; }
+  button:hover { background:#163a5c; }
+  button:disabled { background:#999; cursor:wait; }
+  #mensaje { margin-top:16px; padding:10px; border-radius:8px; display:none; text-align:center; }
+  .ok { background:#e8f5e9; color:var(--verde); }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Company Registration</h1>
+  <p class="sub">Didactic English workshop applying programming</p>
+
+  <!-- El formulario se envía por GET a un iframe oculto: no usa fetch -->
+  <form id="formulario" method="GET" target="oculto">
+    <label for="empresa">Company name *</label>
+    <input type="text" id="empresa" name="empresa" required>
+
+    <div class="fila">
+      <div>
+        <label for="sector">Industry *</label>
+        <select id="sector" name="sector" required>
+          <option value="">Select...</option>
+          <option>Technology</option>
+          <option>Retail</option>
+          <option>Services</option>
+          <option>Agribusiness</option>
+          <option>Tourism</option>
+          <option>Education</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="tamano">Company size *</label>
+        <select id="tamano" name="tamano" required>
+          <option value="">Select...</option>
+          <option>Micro (1-10)</option>
+          <option>Small (11-50)</option>
+          <option>Medium (51-200)</option>
+          <option>Large (200+)</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="ciudad">City *</label>
+    <input type="text" id="ciudad" name="ciudad" required>
+
+    <label for="participante">Participant name *</label>
+    <input type="text" id="participante" name="participante" required>
+
+    <div class="fila">
+      <div>
+        <label for="cargo">Job title</label>
+        <input type="text" id="cargo" name="cargo">
+      </div>
+      <div>
+        <label for="nivel">English level *</label>
+        <select id="nivel" name="nivel" required>
+          <option value="">Select...</option>
+          <option>A1</option><option>A2</option>
+          <option>B1</option><option>B2</option>
+          <option>C1</option><option>C2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fila">
+      <div>
+        <label for="correo">Email *</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+      <div>
+        <label for="telefono">Phone</label>
+        <input type="tel" id="telefono" name="telefono">
+      </div>
+    </div>
+
+    <button type="submit" id="btn">Register</button>
+    <div id="mensaje"></div>
+  </form>
+</div>
+
+<iframe name="oculto" style="display:none" title="hidden"></iframe>
+
+<script>
+  // 👉 Your Apps Script URL (it ends in /exec)
+  const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxIM3i0ZFZ8saigzEVWYVgY3IE1Td-GJYAG0XZssrgZTofy0YcXbE5zgCO8a4w6nafC/exec";
+
+  const form = document.getElementById("formulario");
+  const btn = document.getElementById("btn");
+  const msg = document.getElementById("mensaje");
+
+  form.action = URL_SCRIPT;
+
+  form.addEventListener("submit", () => {
+    // El navegador envía el formulario solo; aquí solo cambiamos la pantalla
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    setTimeout(() => {
+      msg.textContent = "✅ Registration sent! Check the sheet to confirm.";
+      msg.className = "ok";
+      msg.style.display = "block";
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = "Register";
+    }, 1500);
+  });
+</script>
+</body>
+</html>

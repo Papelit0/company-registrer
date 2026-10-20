@@ -2,151 +2,149 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fair Registration - English Coding Workshop</title>
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fair Registration - English Coding Workshop</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="card">
-    <h1>Fair Registration</h1>
-    <p class="sub">Didactic English workshop applying programming</p>
+<div class="card">
+  <h1>Fair Registration</h1>
+  <p class="sub">Didactic English workshop applying programming</p>
+  <p class="nota">The Registration ID (CAN-001, CAN-002...) is generated automatically.</p>
 
+  <form id="formulario" method="GET" target="oculto">
+    <label for="name">Full Name *</label>
+    <input type="text" id="name" name="name" required>
 
-    <form id="formulario" method="GET" target="oculto">
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required>
+    <label for="country">Country of Origin *</label>
+    <input type="text" id="country" name="country" list="countries"
+           placeholder="Start typing a country..." autocomplete="off" required>
+    <datalist id="countries"></datalist>
 
-      <label for="country">Country of Origin *</label>
-      <input type="text" id="country" name="country" list="countries" placeholder="Start typing a country..."
-        autocomplete="off" required>
-      <datalist id="countries"></datalist>
+    <label for="company">Company Name *</label>
+    <input type="text" id="company" name="company" required>
 
-      <label for="company">Company Name *</label>
-      <input type="text" id="company" name="company" required>
+    <label for="industry">Industry Sector *</label>
+    <select id="industry" name="industry" required>
+      <option value="">Select...</option>
+      <option>Auto Parts &amp; Engines</option>
+      <option>Chemical Products</option>
+      <option>Construction Materials</option>
+      <option>Electronics &amp; Gadgets</option>
+      <option>Food &amp; Beverages</option>
+      <option>Furniture &amp; Decor</option>
+      <option>Health &amp; Medicine</option>
+      <option>Heavy Machinery</option>
+      <option>Home Appliances</option>
+      <option>Industrial Tools</option>
+      <option>Lighting</option>
+      <option>Renewable Energy</option>
+      <option>Security Systems</option>
+      <option>Textiles &amp; Footwear</option>
+      <option>Toys &amp; Gifts</option>
+    </select>
 
-      <label for="industry">Industry Sector *</label>
-      <select id="industry" name="industry" required>
-        <option value="">Select...</option>
-        <option>Auto Parts &amp; Engines</option>
-        <option>Chemical Products</option>
-        <option>Construction Materials</option>
-        <option>Electronics &amp; Gadgets</option>
-        <option>Food &amp; Beverages</option>
-        <option>Furniture &amp; Decor</option>
-        <option>Health &amp; Medicine</option>
-        <option>Heavy Machinery</option>
-        <option>Home Appliances</option>
-        <option>Industrial Tools</option>
-        <option>Lighting</option>
-        <option>Renewable Energy</option>
-        <option>Security Systems</option>
-        <option>Textiles &amp; Footwear</option>
-        <option>Toys &amp; Gifts</option>
-      </select>
-
-      <div class="fila">
-        <div>
-          <label for="profile">Profile Type *</label>
-          <select id="profile" name="profile" required>
-            <option value="">Select...</option>
-            <option>Exhibitor</option>
-            <option>Buyer</option>
-            <option>Investor</option>
-            <option>General Visitor</option>
-          </select>
-        </div>
-        <div>
-          <label for="phase">Interest Phase *</label>
-          <select id="phase" name="phase" required>
-            <option value="">Select...</option>
-            <option>Phase 1</option>
-            <option>Phase 2</option>
-            <option>Phase 3</option>
-            <option>All Phases</option>
-          </select>
-        </div>
+    <div class="fila">
+      <div>
+        <label for="profile">Profile Type *</label>
+        <select id="profile" name="profile" required>
+          <option value="">Select...</option>
+          <option>Exhibitor</option>
+          <option>Buyer</option>
+          <option>Investor</option>
+          <option>General Visitor</option>
+        </select>
       </div>
-
-      <div class="fila">
-        <div>
-          <label for="budget">Estimated Budget *</label>
-          <select id="budget" name="budget" required>
-            <option value="">Select...</option>
-            <option>Under $50k</option>
-            <option>$50k-$200k</option>
-            <option>$200k-$1M</option>
-            <option>Over $1M</option>
-          </select>
-        </div>
-        <div>
-          <label for="status">Registration Status *</label>
-          <select id="status" name="status" required>
-            <option value="">Select...</option>
-            <option>Confirmed</option>
-            <option>Pending</option>
-            <option>Cancelled</option>
-          </select>
-        </div>
+      <div>
+        <label for="phase">Interest Phase *</label>
+        <select id="phase" name="phase" required>
+          <option value="">Select...</option>
+          <option>Phase 1</option>
+          <option>Phase 2</option>
+          <option>Phase 3</option>
+          <option>All Phases</option>
+        </select>
       </div>
+    </div>
 
-      <button type="submit" id="btn">Register</button>
-      <div id="mensaje"></div>
-    </form>
-  </div>
+    <div class="fila">
+      <div>
+        <label for="budget">Estimated Budget *</label>
+        <select id="budget" name="budget" required>
+          <option value="">Select...</option>
+          <option>Under $50k</option>
+          <option>$50k-$200k</option>
+          <option>$200k-$1M</option>
+          <option>Over $1M</option>
+        </select>
+      </div>
+      <div>
+        <label for="status">Registration Status *</label>
+        <select id="status" name="status" required>
+          <option value="">Select...</option>
+          <option>Confirmed</option>
+          <option>Pending</option>
+          <option>Cancelled</option>
+        </select>
+      </div>
+    </div>
 
-  <iframe name="oculto" style="display:none" title="hidden"></iframe>
+    <button type="submit" id="btn">Register</button>
+    <div id="mensaje"></div>
+  </form>
+</div>
 
-  <script>
-    const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbzijAHznmc9vi7G7yaEz0vbLp3_jdBr8JpH-3wpfEHAJnjV3UBJSM00hNzWGS3wb8Yp1A/exec";
+<iframe name="oculto" style="display:none" title="hidden"></iframe>
 
-    const COUNTRIES = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "DR Congo", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+<script>
+  const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwifJLlnfmXslbZm8Xf_XKgJ6LzX6m3iJgYoVQKRvt99cZYerJWoE9Vxc-eB-Qf865cnQ/exec";
 
-    const form = document.getElementById("formulario");
-    const btn = document.getElementById("btn");
-    const msg = document.getElementById("mensaje");
-    const country = document.getElementById("country");
-    const lista = document.getElementById("countries");
+  const COUNTRIES = ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","DR Congo","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
 
+  const form = document.getElementById("formulario");
+  const btn = document.getElementById("btn");
+  const msg = document.getElementById("mensaje");
+  const country = document.getElementById("country");
+  const lista = document.getElementById("countries");
 
-    COUNTRIES.forEach(c => {
-      const o = document.createElement("option");
-      o.value = c;
-      lista.appendChild(o);
-    });
-
-
-    function revisarPais() {
-      const v = country.value.trim().toLowerCase();
-      const encontrado = COUNTRIES.find(c => c.toLowerCase() === v);
-      if (encontrado) {
-        country.value = encontrado;
-        country.setCustomValidity("");
-      } else {
-        country.setCustomValidity("Please choose a country from the list.");
-      }
+ 
+  COUNTRIES.forEach(c => {
+    const o = document.createElement("option");
+    o.value = c;
+    lista.appendChild(o);
+  });
+  function revisarPais() {
+    const v = country.value.trim().toLowerCase();
+    const encontrado = COUNTRIES.find(c => c.toLowerCase() === v);
+    if (encontrado) {
+      country.value = encontrado;
+      country.setCustomValidity("");
+    } else {
+      country.setCustomValidity("Please choose a country from the list.");
     }
-    country.addEventListener("input", revisarPais);
-    country.addEventListener("change", revisarPais);
+  }
+  country.addEventListener("input", revisarPais);
+  country.addEventListener("change", revisarPais);
 
-    form.action = URL_SCRIPT;
+  form.action = URL_SCRIPT;
 
-    form.addEventListener("submit", () => {
-      btn.disabled = true;
-      btn.textContent = "Sending...";
+  form.addEventListener("submit", () => {
+    btn.disabled = true;
+    btn.textContent = "Sending...";
 
-      setTimeout(() => {
-        msg.textContent = "✅ Registration sent! Check the sheet to confirm.";
-        msg.className = "ok";
-        msg.style.display = "block";
-        form.reset();
-        country.setCustomValidity("");
-        btn.disabled = false;
-        btn.textContent = "Register";
-      }, 1500);
-    });
-  </script>
+    setTimeout(() => {
+      msg.textContent = "✅ Registration sent! Check the sheet to confirm.";
+      msg.className = "ok";
+      msg.style.display = "block";
+      form.reset();
+      country.setCustomValidity("");
+      btn.disabled = false;
+      btn.textContent = "Register";
+    }, 1500);
+  });
+</script>
 </body>
 
 </html>

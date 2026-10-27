@@ -2,147 +2,555 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fair Registration - English Coding Workshop</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INNOVABIZ EXPO 2026 | Annual International Trade Summit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div class="card">
-  <h1>Fair Registration</h1>
 
-  <form id="formulario" method="GET" target="oculto">
-    <label for="name">Full Name *</label>
-    <input type="text" id="name" name="name" required>
+  <!-- Ambient background glow elements -->
+  <div class="bg-ambient">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+  </div>
 
-    <label for="country">Country of Origin *</label>
-    <input type="text" id="country" name="country" list="countries"
-           placeholder="Start typing a country..." autocomplete="off" required>
-    <datalist id="countries"></datalist>
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-name">INNOVA<span>BIZ</span> EXPO</div>
+      </a>
 
-    <label for="company">Company Name *</label>
-    <input type="text" id="company" name="company" required>
-
-    <label for="industry">Industry Sector *</label>
-    <select id="industry" name="industry" required>
-      <option value="">Select...</option>
-      <option>Auto Parts &amp; Engines</option>
-      <option>Chemical Products</option>
-      <option>Construction Materials</option>
-      <option>Electronics &amp; Gadgets</option>
-      <option>Food &amp; Beverages</option>
-      <option>Furniture &amp; Decor</option>
-      <option>Health &amp; Medicine</option>
-      <option>Heavy Machinery</option>
-      <option>Home Appliances</option>
-      <option>Industrial Tools</option>
-      <option>Lighting</option>
-      <option>Renewable Energy</option>
-      <option>Security Systems</option>
-      <option>Textiles &amp; Footwear</option>
-      <option>Toys &amp; Gifts</option>
-    </select>
-
-    <div class="fila">
-      <div>
-        <label for="profile">Profile Type *</label>
-        <select id="profile" name="profile" required>
-          <option value="">Select...</option>
-          <option>Exhibitor</option>
-          <option>Buyer</option>
-          <option>Investor</option>
-          <option>General Visitor</option>
-        </select>
-      </div>
-      <div>
-        <label for="phase">Interest Phase *</label>
-        <select id="phase" name="phase" required>
-          <option value="">Select...</option>
-          <option>Phase 1</option>
-          <option>Phase 2</option>
-          <option>Phase 3</option>
-          <option>All Phases</option>
-        </select>
+      <div class="nav-right">
+        <div class="event-status-pill">
+          <span class="status-dot"></span>
+          <span>Official Trade Fair Registration • Fall 2026 Edition</span>
+        </div>
+        <a href="dashboard.html" class="nav-btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        <button type="button" class="nav-btn-primary" data-open-modal>Register</button>
       </div>
     </div>
+  </header>
 
-    <div class="fila">
-      <div>
-        <label for="budget">Estimated Budget *</label>
-        <select id="budget" name="budget" required>
-          <option value="">Select...</option>
-          <option>Under $50k</option>
-          <option>$50k-$200k</option>
-          <option>$200k-$1M</option>
-          <option>Over $1M</option>
-        </select>
+  <!-- Hero Section -->
+  <main class="page-main">
+    <div class="content-wrapper">
+
+      <!-- Summit Eyebrow Badge -->
+      <div class="summit-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polygon
+            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+          </polygon>
+        </svg>
+        <span>ANNUAL INTERNATIONAL TRADE SUMMIT</span>
       </div>
-      <div>
-        <label for="status">Registration Status *</label>
-        <select id="status" name="status" required>
-          <option value="">Select...</option>
-          <option>Confirmed</option>
-          <option>Pending</option>
-          <option>Cancelled</option>
-        </select>
+
+      <!-- Main Headline -->
+      <h1 class="hero-headline">
+        Connect, Pitch & Scale on the <span class="gradient-text">Global Stage</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtext">
+        Join over 1,200+ forward-thinking enterprises, institutional investors, and global buyers. Register your company
+        today to reserve your booth, access 1-on-1 B2B matchmaking, and participate in our didactic English business
+        pitch tracks.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="hero-cta-group">
+        <button type="button" class="btn-hero-primary" data-open-modal>
+          <span>Register your company</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <a href="dashboard.html" class="btn-hero-secondary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span>View Dashboard</span>
+        </a>
+      </div>
+
+      <!-- Live Numbers Ticker Bar (Bien Macizo) -->
+      <div class="metrics-bar">
+        <div class="metric-item">
+          <span class="metric-val">1,200+</span>
+          <span class="metric-lbl">Registered Companies</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">40+</span>
+          <span class="metric-lbl">Global Delegations</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">$45M+</span>
+          <span class="metric-lbl">B2B Deal Volume</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-val">100%</span>
+          <span class="metric-lbl">Bilingual English Tracks</span>
+        </div>
+      </div>
+
+      <!-- FLIP CARD -->
+      <div class="flip-card-wrapper" id="flipShowcaseCard" title="Click or hover to flip this card">
+        <div class="flip-card-inner">
+
+          <!-- FRONT FACE OF THE CARD -->
+          <div class="flip-card-front showcase-banner">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1600&q=85"
+              alt="Global Trade Fair Exhibition Hall" class="showcase-img">
+
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <span class="showcase-tag">MAIN EXPO HALL</span>
+                <h2 class="showcase-title">International Innovation & Trade Pavilion</h2>
+                <p class="showcase-meta">40+ Countries • 15,000+ Verified Trade Visitors • Oct 28–30, 2026</p>
+              </div>
+            </div>
+
+            <!-- Floating Verified Stat Card -->
+            <div class="floating-stat-box">
+              <div class="stat-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="stat-number">1,200+</div>
+                <div class="stat-caption">Registered Companies</div>
+              </div>
+            </div>
+
+            <!-- Interactive Flip Prompt Pill -->
+            <div class="flip-prompt-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+              </svg>
+              <span>Hover or tap to reveal enterprise benefits</span>
+            </div>
+          </div>
+
+          <!-- BACK FACE OF THE CARD (ENTERPRISE VALUE PROPOSITION) -->
+          <div class="flip-card-back">
+            <div class="back-card-content">
+
+              <h2 class="back-title">
+                This is Your Golden Opportunity to <span class="gradient-text">Unlock Unrivaled Competitive
+                  Advantages</span> for Your Enterprise
+              </h2>
+
+              <p class="back-description">
+                Position your brand at the premier didactic trade summit. Scale operations internationally, negotiate
+                directly with institutional partners, and secure high-value B2B agreements in fluent business English.
+              </p>
+
+              <!-- 4 Strategic Benefits Grid -->
+              <div class="back-benefits-grid">
+                <div class="benefit-chip">
+                  <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                      <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="benefit-info">
+                    <strong>Accelerate Cross-Border Revenue</strong>
+                    <p>Direct exposure to over 15,000 corporate buyers actively seeking new suppliers and tech
+                      solutions.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-chip">
+                  <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <div class="benefit-info">
+                    <strong>Guaranteed 1-on-1 Deal Rooms</strong>
+                    <p>Pre-scheduled bilateral meetings with verified global procurement directors and importers.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-chip">
+                  <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </div>
+                  <div class="benefit-info">
+                    <strong>Direct Institutional Capital</strong>
+                    <p>Pitch your company to 85+ VC syndicates, sovereign funds, and accredited angels.</p>
+                  </div>
+                </div>
+
+                <div class="benefit-chip">
+                  <div class="benefit-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="benefit-info">
+                    <strong>Certified Bilingual Pitch Pass</strong>
+                    <p>Live coaching and structured workshop sessions to master executive English deal negotiations.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Expo Core Pillars Grid -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3>Bilingual Pitch Stage</h3>
+          <p>Showcase your company's solutions to international buyers with English-guided coding and business
+            workshops.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+          </div>
+          <h3>Direct B2B Matchmaking</h3>
+          <p>Pre-scheduled 1-on-1 networking meetings with corporate buyers, distributors, and strategic partners
+            worldwide.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3>Investor Deal Room</h3>
+          <p>Access VC funds and angel investors eager to back high-potential startups and scaling enterprises.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Certified Exhibition Pass</h3>
+          <p>Full digital exhibition package, official trade fair directory listing, and institutional accreditation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Executive Testimonial Quote -->
+      <div class="testimonial-banner">
+        <img class="testimonial-avatar"
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+          alt="Claire Sterling">
+        <div class="testimonial-body">
+          <blockquote>"Attending the fair last year opened distribution channels in 4 new international markets within
+            90 days. The B2B matching was exceptional."</blockquote>
+          <cite class="testimonial-author">Claire Sterling — Chief Operations Officer, TerraTech Solutions</cite>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Page Footer -->
+  <footer class="page-footer">
+    <div class="footer-container">
+      <div class="footer-copy">© 2026 InnovaBiz International Trade Fair & English Coding Workshop. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="#">Exhibitor Guidelines</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Support</a>
       </div>
     </div>
+  </footer>
 
-    <button type="submit" id="btn">Register</button>
-    <div id="mensaje"></div>
-  </form>
-</div>
+  <!-- FORM  -->
+  <dialog id="modal" class="modal-dialog" aria-label="Fair Registration">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" id="cerrarModal" aria-label="Close Registration">×</button>
 
-<iframe name="oculto" style="display:none" title="hidden"></iframe>
+      <!-- Title exactly matching your base form -->
+      <h2 class="modal-title">Fair Registration</h2>
 
-<script>
-  const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwifJLlnfmXslbZm8Xf_XKgJ6LzX6m3iJgYoVQKRvt99cZYerJWoE9Vxc-eB-Qf865cnQ/exec";
+      <!-- Inline confirmation feedback -->
+      <div id="feedbackBox" class="feedback-box" style="display: none;"></div>
 
-  const COUNTRIES = ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","DR Congo","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+      <!-- Form connected to Google Sheets via Apps Script doGet -->
+      <form id="fairRegistrationForm" method="GET"
+        action="https://script.google.com/macros/s/AKfycbzvYs-AymT0MuqPpE44XNhBaX4X7ztcnmMAqHW8gJOpAvwO3fM-VDC5uVmwSBBcQO6PWQ/exec"
+        target="ocultoFrame">
 
-  const form = document.getElementById("formulario");
-  const btn = document.getElementById("btn");
-  const msg = document.getElementById("mensaje");
-  const country = document.getElementById("country");
-  const lista = document.getElementById("countries");
+        <!-- 1. Full Name * -->
+        <div class="form-field">
+          <label for="name">Full Name <span class="ast">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
 
- 
-  COUNTRIES.forEach(c => {
-    const o = document.createElement("option");
-    o.value = c;
-    lista.appendChild(o);
-  });
-  function revisarPais() {
-    const v = country.value.trim().toLowerCase();
-    const encontrado = COUNTRIES.find(c => c.toLowerCase() === v);
-    if (encontrado) {
-      country.value = encontrado;
-      country.setCustomValidity("");
-    } else {
-      country.setCustomValidity("Please choose a country from the list.");
-    }
-  }
-  country.addEventListener("input", revisarPais);
-  country.addEventListener("change", revisarPais);
+        <!-- 2. Country of Origin * (with datalist) -->
+        <div class="form-field">
+          <label for="country">Country of Origin <span class="ast">*</span></label>
+          <input type="text" id="country" name="country" list="countryOptions" placeholder="Start typing a country..."
+            required autocomplete="country-name">
+          <datalist id="countryOptions">
+            <option value="United States">
+            <option value="United Kingdom">
+            <option value="Canada">
+            <option value="Germany">
+            <option value="Colombia">
+            <option value="Mexico">
+            <option value="Brazil">
+            <option value="France">
+            <option value="Spain">
+            <option value="Japan">
+            <option value="China">
+            <option value="India">
+            <option value="Australia">
+            <option value="Italy">
+            <option value="Netherlands">
+            <option value="Switzerland">
+            <option value="South Korea">
+            <option value="Chile">
+            <option value="Argentina">
+            <option value="Peru">
+          </datalist>
+        </div>
 
-  form.action = URL_SCRIPT;
+        <!-- 3. Company Name * -->
+        <div class="form-field">
+          <label for="company">Company Name <span class="ast">*</span></label>
+          <input type="text" id="company" name="company" required autocomplete="organization">
+        </div>
 
-  form.addEventListener("submit", () => {
-    btn.disabled = true;
-    btn.textContent = "Sending...";
+        <!-- 4. Industry Sector * -->
+        <div class="form-field">
+          <label for="industry">Industry Sector <span class="ast">*</span></label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Select...</option>
+            <option value="Auto Parts & Engines">Auto Parts & Engines</option>
+            <option value="Chemical Products">Chemical Products</option>
+            <option value="Construction Materials">Construction Materials</option>
+            <option value="Electronics & Gadgets">Electronics & Gadgets</option>
+            <option value="Food & Beverages">Food & Beverages</option>
+            <option value="Furniture & Decor">Furniture & Decor</option>
+            <option value="Health & Medicine">Health & Medicine</option>
+            <option value="Heavy Machinery">Heavy Machinery</option>
+            <option value="Home Appliances">Home Appliances</option>
+            <option value="Industrial Tools">Industrial Tools</option>
+            <option value="Lighting">Lighting</option>
+            <option value="Renewable Energy">Renewable Energy</option>
+            <option value="Security Systems">Security Systems</option>
+            <option value="Textiles & Footwear">Textiles & Footwear</option>
+            <option value="Toys & Gifts">Toys & Gifts</option>
+            <option value="Technology & Software">Technology & Software</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-    setTimeout(() => {
-      msg.textContent = "✅ Registration sent! Check the sheet to confirm.";
-      msg.className = "ok";
-      msg.style.display = "block";
-      form.reset();
-      country.setCustomValidity("");
-      btn.disabled = false;
-      btn.textContent = "Register";
-    }, 1500);
-  });
-</script>
+        <!-- 5. Row: Profile Type * | Interest Phase * -->
+        <div class="form-row-2col">
+          <div class="form-field">
+            <label for="profile">Profile Type <span class="ast">*</span></label>
+            <select id="profile" name="profile" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="Exhibitor">Exhibitor</option>
+              <option value="Buyer">Buyer</option>
+              <option value="Investor">Investor</option>
+              <option value="General Visitor">General Visitor</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="phase">Interest Phase <span class="ast">*</span></label>
+            <select id="phase" name="phase" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="Phase 1">Phase 1</option>
+              <option value="Phase 2">Phase 2</option>
+              <option value="Phase 3">Phase 3</option>
+              <option value="All Phases">All Phases</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 6. Row: Estimated Budget * | Registration Status * -->
+        <div class="form-row-2col">
+          <div class="form-field">
+            <label for="budget">Estimated Budget <span class="ast">*</span></label>
+            <select id="budget" name="budget" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="Under $50k">Under $50k</option>
+              <option value="$50k-$200k">$50k-$200k</option>
+              <option value="$200k-$1M">$200k-$1M</option>
+              <option value="Over $1M">Over $1M</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="status">Registration Status <span class="ast">*</span></label>
+            <select id="status" name="status" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Pending">Pending</option>
+              <option value="Under Review">Under Review</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit Button (Dark Navy) -->
+        <button type="submit" id="btnRegister" class="btn-modal-submit">Register</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Hidden iframe for background submission to Google Apps Script -->
+  <iframe name="ocultoFrame" id="ocultoFrame" style="display:none" title="Hidden submission target"></iframe>
+
+  <!-- Client-side modal, 3D flip card, & submission controller -->
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvYs-AymT0MuqPpE44XNhBaX4X7ztcnmMAqHW8gJOpAvwO3fM-VDC5uVmwSBBcQO6PWQ/exec";
+
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.getElementById("cerrarModal");
+    const form = document.getElementById("fairRegistrationForm");
+    const btnSubmit = document.getElementById("btnRegister");
+    const feedbackBox = document.getElementById("feedbackBox");
+    const flipCard = document.getElementById("flipShowcaseCard");
+
+    form.action = SCRIPT_URL;
+
+    // Toggle 3D flip card on click/tap
+    flipCard.addEventListener("click", (e) => {
+      // Don't flip if user clicked the register CTA button inside
+      if (e.target.closest("[data-open-modal]")) {
+        return;
+      }
+      flipCard.classList.toggle("is-flipped");
+    });
+
+    // Open modal from any CTA
+    document.querySelectorAll("[data-open-modal]").forEach(button => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        feedbackBox.style.display = "none";
+        feedbackBox.innerHTML = "";
+        modal.showModal();
+      });
+    });
+
+    // Close modal on X button
+    closeModalBtn.addEventListener("click", () => modal.close());
+
+    // Close modal if user clicks outside the card
+    modal.addEventListener("click", (e) => {
+      const card = modal.querySelector(".modal-card");
+      const cardRect = card.getBoundingClientRect();
+      const isInCard = (
+        e.clientX >= cardRect.left &&
+        e.clientX <= cardRect.right &&
+        e.clientY >= cardRect.top &&
+        e.clientY <= cardRect.bottom
+      );
+      if (!isInCard) {
+        modal.close();
+      }
+    });
+
+    // Submit handler: shows feedback and resets
+    form.addEventListener("submit", () => {
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = "Processing Registration...";
+
+      setTimeout(() => {
+        feedbackBox.innerHTML = `
+          <div class="feedback-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div>
+            <strong>Registration Successfully Saved!</strong>
+            <p>Your enterprise data was synced with the Google Sheet.</p>
+          </div>
+        `;
+        feedbackBox.className = "feedback-box success";
+        feedbackBox.style.display = "flex";
+
+        form.reset();
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = "Register Another Company";
+      }, 1500);
+    });
+  </script>
 </body>
 
 </html>

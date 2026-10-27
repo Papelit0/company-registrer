@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Executive Trade Infographic & Analytics | INNOVABIZ EXPO 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg-deep: #060b18;
+      --bg-surface: #0b1429;
+      --bg-card: #0f1c3a;
+      --cyan-vivid: #06b6d4;
+      --cyan-glow: #38bdf8;
+      --blue-electric: #2563eb;
+      --blue-royal: #1d4ed8;
+      --emerald-live: #10b981;
+      --amber-gold: #f59e0b;
+      --purple-accent: #8b5cf6;
+      --text-white: #ffffff;
+      --text-silver: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border-glass: rgba(56, 189, 248, 0.2);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--text-silver);
+      line-height: 1.5;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glows */
+    .bg-ambient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .ambient-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.5;
+    }
+    .glow-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, rgba(37, 99, 235, 0.04) 70%);
+      top: -150px;
+      left: -100px;
+    }
+    .glow-2 {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(139, 92, 246, 0.04) 70%);
+      top: 45%;
+      right: -120px;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      background: rgba(6, 11, 24, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 50;
+      padding: 12px 24px;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--blue-electric) 0%, var(--cyan-vivid) 100%);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.4);
+    }
+    .brand-titles {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .brand-name span {
+      background: linear-gradient(135deg, var(--cyan-glow) 0%, #60a5fa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 28, 58, 0.8);
+      border: 1px solid var(--border-glass);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #7dd3fc;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--emerald-live);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--emerald-live);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-glass);
+      color: #e2e8f0;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--cyan-glow);
+      color: #ffffff;
+    }
+
+    /* Main Container */
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* Cohesive Executive Header with Aligned Actions */
+    .infographic-header {
+      background: linear-gradient(135deg, rgba(15, 28, 58, 0.75) 0%, rgba(11, 20, 42, 0.9) 100%);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 22px 28px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    .header-info {
+      flex: 1;
+      min-width: 280px;
+    }
+    .header-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .header-info p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.4;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-pdf {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #ffffff;
+    }
+    .btn-pdf:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--cyan-glow);
+      transform: translateY(-1px);
+    }
+    .btn-refresh {
+      background: linear-gradient(135deg, var(--cyan-vivid) 0%, var(--blue-electric) 100%);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+    }
+    .btn-refresh:hover {
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+      transform: translateY(-1px);
+    }
+    .refresh-spin {
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* 4 Proportional KPI Stat Cards */
+    .kpis-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi-card {
+      background: linear-gradient(135deg, rgba(15, 28, 58, 0.8) 0%, rgba(11, 20, 42, 0.95) 100%);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
+    }
+    .kpi-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .kpi-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      line-height: 1.25;
+    }
+    .kpi-trend {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald-live);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .kpi-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .kpi-desc {
+      font-size: 0.76rem;
+      color: var(--cyan-glow);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Balanced 2x2 Charts Grid */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .chart-panel {
+      background: linear-gradient(135deg, rgba(15, 28, 58, 0.75) 0%, rgba(11, 20, 42, 0.9) 100%);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 10px;
+    }
+    .panel-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .panel-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--cyan-glow);
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 2px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .chart-canvas-box {
+      position: relative;
+      height: 270px;
+      width: 100%;
+    }
+
+    /* Print / PDF Mode */
+    @media print {
+      @page {
+        size: portrait;
+        margin: 8mm;
+      }
+      *, *::before, *::after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+      }
+      html, body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+      }
+      .bg-ambient, .top-nav, .header-actions, .live-badge {
+        display: none !important;
+      }
+      .dashboard-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .infographic-header {
+        background: #f8fafc !important;
+        border: 1.5px solid #cbd5e1 !important;
+        padding: 12px 16px !important;
+        margin-bottom: 10px !important;
+        border-radius: 8px !important;
+      }
+      .header-info h1 {
+        font-size: 1.3rem !important;
+        color: #0f172a !important;
+        margin-bottom: 2px !important;
+      }
+      .header-info p {
+        font-size: 0.78rem !important;
+        color: #475569 !important;
+      }
+      .kpis-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .kpi-card {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        padding: 10px 12px !important;
+      }
+      .kpi-card::before {
+        display: none !important;
+      }
+      .kpi-label {
+        font-size: 0.64rem !important;
+        color: #475569 !important;
+      }
+      .kpi-trend {
+        background: #ecfdf5 !important;
+        color: #065f46 !important;
+        border: 1px solid #a7f3d0 !important;
+        font-size: 0.6rem !important;
+        padding: 1px 5px !important;
+      }
+      .kpi-number {
+        font-size: 1.55rem !important;
+        color: #0f172a !important;
+        margin: 2px 0 !important;
+      }
+      .kpi-desc {
+        font-size: 0.68rem !important;
+        color: #0284c7 !important;
+      }
+      .charts-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+      .chart-panel {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        padding: 10px 12px !important;
+        overflow: hidden !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .panel-header {
+        margin-bottom: 6px !important;
+      }
+      .panel-title {
+        font-size: 0.85rem !important;
+        color: #0f172a !important;
+      }
+      .panel-tag {
+        background: #f1f5f9 !important;
+        color: #0369a1 !important;
+        border: 1px solid #cbd5e1 !important;
+        font-size: 0.62rem !important;
+        padding: 1px 6px !important;
+      }
+      .chart-canvas-box {
+        height: 180px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+    }
+
+    /* Media Queries for Perfect Proportions */
+    @media (max-width: 1100px) {
+      .kpis-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+      .infographic-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .header-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .kpis-grid {
+        grid-template-columns: 1fr;
+      }
+      .top-nav {
+        padding: 10px 14px;
+      }
+      .header-info h1 {
+        font-size: 1.45rem;
+      }
+      .chart-canvas-box {
+        height: 250px;
+      }
+      .live-badge {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="bg-ambient">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-inner">
+      <div class="brand-group">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <div class="brand-name">INNOVA<span>BIZ</span> ANALYTICS</div>
+          <div class="brand-sub">Executive Infographic & Intelligence Report</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <div class="live-badge">
+          <span class="pulse-dot"></span>
+          <span id="liveStatusText">Live Feed Active</span>
+        </div>
+        <a href="index.html" class="nav-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Expo Portal</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="dashboard-container">
+    
+    <!-- Cohesive Executive Header with Aligned Buttons -->
+    <div class="infographic-header">
+      <div class="header-info">
+        <h1>Global Trade Summit 2026: Live Intelligence</h1>
+        <p>Comprehensive B2B enterprise engagement analytics, industry market penetration, and international deal progression.</p>
+      </div>
+
+      <div class="header-actions">
+        <!-- PDF Export Button -->
+        <button type="button" class="btn-action btn-pdf" id="btnPdf" title="Print or Save as PDF Report">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9V2h12v7"></path>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Export PDF</span>
+        </button>
+
+        <!-- Refresh Data Button -->
+        <button type="button" class="btn-action btn-refresh" id="btnRefresh" title="Refresh Live Data">
+          <svg id="refreshIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+          <span>Refresh Live</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4 Proportional KPI Stat Cards -->
+    <div class="kpis-grid">
+      <div class="kpi-card">
+        <div class="kpi-top-row">
+          <span class="kpi-label">Registered Enterprises</span>
+          <span class="kpi-trend">+28% YoY</span>
+        </div>
+        <div class="kpi-number" id="kpiTotal">--</div>
+        <div class="kpi-desc">Verified commercial entities</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top-row">
+          <span class="kpi-label">Projected B2B Volume</span>
+          <span class="kpi-trend">High Intent</span>
+        </div>
+        <div class="kpi-number" id="kpiVolume">$48.5M</div>
+        <div class="kpi-desc">Cross-border deal pipeline</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top-row">
+          <span class="kpi-label">Confirmed Status Rate</span>
+          <span class="kpi-trend">Accredited</span>
+        </div>
+        <div class="kpi-number" id="kpiConfirmedRate">--%</div>
+        <div class="kpi-desc" id="kpiConfirmedCount">-- confirmed booths</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top-row">
+          <span class="kpi-label">Global Delegations</span>
+          <span class="kpi-trend">5 Continents</span>
+        </div>
+        <div class="kpi-number" id="kpiCountries">--</div>
+        <div class="kpi-desc">Participating nations</div>
+      </div>
+    </div>
+
+    <!-- Balanced 2x2 Charts Grid -->
+    <div class="charts-grid">
+      
+      <!-- Chart 1: Industry Sector (Horizontal Bar) -->
+      <div class="chart-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            Industry Sector Market Share
+          </h2>
+          <span class="panel-tag">Top Demanded</span>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="chartIndustry"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 2: Profile Type (Doughnut) -->
+      <div class="chart-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Enterprise Profile Mix
+          </h2>
+          <span class="panel-tag">Role Breakdown</span>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="chartProfile"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 3: Negotiation Funnel (Horizontal Bar for Clean Legibility) -->
+      <div class="chart-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            Commercial Negotiation Funnel
+          </h2>
+          <span class="panel-tag">Deal Stages</span>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="chartPhase"></canvas>
+        </div>
+      </div>
+
+      <!-- Chart 4: Capital Tier Allocation (Polar Area) -->
+      <div class="chart-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            Estimated Capital Allocation
+          </h2>
+          <span class="panel-tag">Budget Tiers</span>
+        </div>
+        <div class="chart-canvas-box">
+          <canvas id="chartBudget"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Dynamic Data Controller -->
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvYs-AymT0MuqPpE44XNhBaX4X7ztcnmMAqHW8gJOpAvwO3fM-VDC5uVmwSBBcQO6PWQ/exec";
+    
+    let dataset = [];
+    let chartInstIndustry, chartInstProfile, chartInstPhase, chartInstBudget;
+
+    // Sample data fallback matching real Google Sheet structure
+    function generateInitialDataset() {
+      return [
+        { id: "CAN-001", company: "Smart Logistics POR", name: "Elena O'Brien", country: "Portugal", industry: "Textiles & Footwear", profile: "Exhibitor", phase: "All Phases", budget: "$200k-$1M", status: "Confirmed" },
+        { id: "CAN-002", company: "Star Systems VIE", name: "Aisha O'Brien", country: "Vietnam", industry: "Electronics & Gadgets", profile: "Buyer", phase: "Phase 1", budget: "$200k-$1M", status: "Confirmed" },
+        { id: "CAN-003", company: "Green Innovations VIE", name: "Omar Gupta", country: "Vietnam", industry: "Heavy Machinery", profile: "Exhibitor", phase: "All Phases", budget: "$50k-$200k", status: "Confirmed" },
+        { id: "CAN-004", company: "Star Innovations JAP", name: "Li Al-Sayed", country: "Japan", industry: "Toys & Gifts", profile: "Investor", phase: "Phase 2", budget: "Over $1M", status: "Confirmed" },
+        { id: "CAN-005", company: "Global Logistics EAU", name: "Jane Garcia", country: "United States", industry: "Textiles & Footwear", profile: "Investor", phase: "All Phases", budget: "$200k-$1M", status: "Confirmed" },
+        { id: "CAN-006", company: "Pro Innovations SUD", name: "Carlos Al-Sayed", country: "South Sudan", industry: "Toys & Gifts", profile: "Investor", phase: "Phase 3", budget: "Under $50k", status: "Confirmed" }
+      ];
+    }
+
+    async function loadData() {
+      const icon = document.getElementById("refreshIcon");
+      icon.classList.add("refresh-spin");
+
+      try {
+        const response = await fetch(`${SCRIPT_URL}?action=read`);
+        const json = await response.json();
+        if (Array.isArray(json) && json.length > 0) {
+          dataset = json;
+          document.getElementById("liveStatusText").textContent = "Live Google Sheet Connected";
+        } else {
+          dataset = generateInitialDataset();
+        }
+      } catch (err) {
+        dataset = generateInitialDataset();
+      } finally {
+        setTimeout(() => icon.classList.remove("refresh-spin"), 600);
+        updateDashboard();
+      }
+    }
+
+    function countBy(data, key) {
+      const acc = {};
+      data.forEach(item => {
+        const v = item[key] || "Other";
+        acc[v] = (acc[v] || 0) + 1;
+      });
+      return Object.entries(acc).sort((a, b) => b[1] - a[1]);
+    }
+
+    function calculateTotalVolume(data) {
+      const budgetValues = {
+        "Under $50k": 35000,
+        "$50k-$200k": 125000,
+        "$200k-$1M": 500000,
+        "Over $1M": 1500000
+      };
+      let sum = 0;
+      data.forEach(d => {
+        sum += (budgetValues[d.budget] || 100000);
+      });
+      if (sum >= 1000000) {
+        return "$" + (sum / 1000000).toFixed(1) + "M";
+      } else if (sum >= 1000) {
+        return "$" + Math.round(sum / 1000) + "K";
+      }
+      return "$" + sum;
+    }
+
+    function updateDashboard() {
+      const total = dataset.length;
+      const confirmed = dataset.filter(d => d.status === "Confirmed").length;
+      const rate = total > 0 ? Math.round((confirmed / total) * 100) : 0;
+      const uniqueCountries = new Set(dataset.map(d => d.country)).size;
+
+      document.getElementById("kpiTotal").textContent = total;
+      document.getElementById("kpiVolume").textContent = calculateTotalVolume(dataset);
+      document.getElementById("kpiConfirmedRate").textContent = `${rate}%`;
+      document.getElementById("kpiConfirmedCount").textContent = `${confirmed} confirmed booths`;
+      document.getElementById("kpiCountries").textContent = `${uniqueCountries} Nations`;
+
+      buildIndustryChart();
+      buildProfileChart();
+      buildPhaseChart();
+      buildBudgetChart();
+    }
+
+    // Chart 1: Industry Sector (Horizontal Bar)
+    function buildIndustryChart() {
+      const counts = countBy(dataset, "industry").slice(0, 6);
+      const labels = counts.map(c => c[0]);
+      const values = counts.map(c => c[1]);
+
+      if (chartInstIndustry) chartInstIndustry.destroy();
+      const ctx = document.getElementById("chartIndustry").getContext("2d");
+      chartInstIndustry = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: "rgba(6, 182, 212, 0.75)",
+            hoverBackgroundColor: "#38bdf8",
+            borderRadius: 5,
+            barThickness: 16
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: { color: "#94a3b8", precision: 0, font: { size: 11 } },
+              grid: { color: "rgba(255, 255, 255, 0.05)" }
+            },
+            y: {
+              ticks: { color: "#e2e8f0", font: { size: 11, weight: 600 } },
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    // Chart 2: Profile Type (Doughnut)
+    function buildProfileChart() {
+      const counts = countBy(dataset, "profile");
+      const labels = counts.map(c => c[0]);
+      const values = counts.map(c => c[1]);
+
+      if (chartInstProfile) chartInstProfile.destroy();
+      const ctx = document.getElementById("chartProfile").getContext("2d");
+      chartInstProfile = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: ["#0284c7", "#10b981", "#f59e0b", "#8b5cf6"],
+            borderWidth: 2,
+            borderColor: "#0b1429"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { color: "#cbd5e1", padding: 12, font: { size: 11, weight: 600 } }
+            }
+          },
+          cutout: "68%"
+        }
+      });
+    }
+
+    // Chart 3: Negotiation Funnel (Horizontal Bar with Real Sheet Phases)
+    function buildPhaseChart() {
+      const order = ["Phase 1", "Phase 2", "Phase 3", "All Phases"];
+      const countsMap = {};
+      dataset.forEach(d => {
+        const p = d.phase || "Phase 1";
+        countsMap[p] = (countsMap[p] || 0) + 1;
+      });
+
+      const labels = order;
+      const values = labels.map(k => countsMap[k] || 0);
+
+      if (chartInstPhase) chartInstPhase.destroy();
+      const ctx = document.getElementById("chartPhase").getContext("2d");
+      chartInstPhase = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: "rgba(37, 99, 235, 0.75)",
+            hoverBackgroundColor: "#60a5fa",
+            borderRadius: 5,
+            barThickness: 16
+          }]
+        },
+        options: {
+          indexAxis: "y", // Horizontal prevents crooked tilted labels!
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: {
+              beginAtZero: true,
+              ticks: { color: "#94a3b8", precision: 0, font: { size: 11 } },
+              grid: { color: "rgba(255, 255, 255, 0.05)" }
+            },
+            y: {
+              ticks: { color: "#e2e8f0", font: { size: 11, weight: 600 } },
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    // Chart 4: Capital Tier Allocation (Polar Area)
+    function buildBudgetChart() {
+      const counts = countBy(dataset, "budget");
+      const labels = counts.map(c => c[0]);
+      const values = counts.map(c => c[1]);
+
+      if (chartInstBudget) chartInstBudget.destroy();
+      const ctx = document.getElementById("chartBudget").getContext("2d");
+      chartInstBudget = new Chart(ctx, {
+        type: "polarArea",
+        data: {
+          labels: labels,
+          datasets: [{
+            data: values,
+            backgroundColor: [
+              "rgba(6, 182, 212, 0.7)",
+              "rgba(37, 99, 235, 0.7)",
+              "rgba(139, 92, 246, 0.7)",
+              "rgba(16, 185, 129, 0.7)",
+              "rgba(245, 158, 11, 0.7)"
+            ],
+            borderColor: "#0b1429"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { color: "#cbd5e1", font: { size: 10, weight: 600 }, padding: 8 }
+            }
+          },
+          scales: {
+            r: {
+              grid: { color: "rgba(255, 255, 255, 0.08)" },
+              ticks: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    // Dynamic color adaptation for PDF Print Export vs Web Screen
+    function setChartsPrintMode(isPrint) {
+      const textColor = isPrint ? "#0f172a" : "#e2e8f0";
+      const subTextColor = isPrint ? "#475569" : "#94a3b8";
+      const gridColor = isPrint ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.05)";
+      const donutBorder = isPrint ? "#ffffff" : "#0b1429";
+
+      // Chart 1: Industry
+      if (chartInstIndustry) {
+        chartInstIndustry.options.scales.x.ticks.color = subTextColor;
+        chartInstIndustry.options.scales.x.grid.color = gridColor;
+        chartInstIndustry.options.scales.y.ticks.color = textColor;
+        chartInstIndustry.resize();
+        chartInstIndustry.update('none');
+      }
+
+      // Chart 2: Profile
+      if (chartInstProfile) {
+        chartInstProfile.options.plugins.legend.labels.color = textColor;
+        chartInstProfile.data.datasets[0].borderColor = donutBorder;
+        chartInstProfile.resize();
+        chartInstProfile.update('none');
+      }
+
+      // Chart 3: Phase
+      if (chartInstPhase) {
+        chartInstPhase.options.scales.x.ticks.color = subTextColor;
+        chartInstPhase.options.scales.x.grid.color = gridColor;
+        chartInstPhase.options.scales.y.ticks.color = textColor;
+        chartInstPhase.resize();
+        chartInstPhase.update('none');
+      }
+
+      // Chart 4: Budget
+      if (chartInstBudget) {
+        chartInstBudget.options.plugins.legend.labels.color = textColor;
+        chartInstBudget.options.scales.r.grid.color = gridColor;
+        chartInstBudget.data.datasets[0].borderColor = donutBorder;
+        chartInstBudget.resize();
+        chartInstBudget.update('none');
+      }
+    }
+
+    // PDF Download Handler (ensures dark text and proper chart sizing on print)
+    document.getElementById("btnPdf").addEventListener("click", () => {
+      setChartsPrintMode(true);
+      setTimeout(() => {
+        window.print();
+      }, 120);
+    });
+
+    // Listeners for standard browser print triggers (Ctrl + P)
+    window.addEventListener("beforeprint", () => setChartsPrintMode(true));
+    window.addEventListener("afterprint", () => setChartsPrintMode(false));
+
+    // Refresh Handler
+    document.getElementById("btnRefresh").addEventListener("click", loadData);
+
+    // Initial load
+    loadData();
+
+  </script>
+</body>
+</html>
